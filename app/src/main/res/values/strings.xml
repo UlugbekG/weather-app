@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+    <string name="location_permission_denied">Location permission was denied!</string>
+    <string name="no_connection">No connection</string>
+    <string name="something_went_wrong">Something went wrong!</string>
+    <string name="enable_location">Enable location to get weather.</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="approve">You need to approve this permission in order to get location coordinates</string>
+    <string name="open">open</string>
+    <string name="enable_gps">Enable GPS</string>
+    <string name="granted">Granted</string>
+    <string name="rejected">Rejected</string>
+    <string name="denied">Denied</string>
+    <string name="weather_info_is_empty">Weather information is empty check your internet connection or location settings and try again.</string>
+    <string name="try_again">Try again</string>
 </resources>
