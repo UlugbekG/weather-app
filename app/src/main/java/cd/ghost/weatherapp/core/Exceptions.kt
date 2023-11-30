@@ -5,8 +5,6 @@ open class AppException(
     cause: Throwable? = null
 ) : Exception(message, cause)
 
-
-class TestException : AppException()
 class NoConnectionException : AppException()
 class EnableGPSException : AppException()
 class LocationResultUnsuccessful : AppException()

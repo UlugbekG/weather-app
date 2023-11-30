@@ -7,12 +7,9 @@ import okhttp3.Response
 
 class MyInterceptor : Interceptor {
 
-    private val TAG = "MyInterceptor"
-
     override fun intercept(chain: Interceptor.Chain): Response {
         val request: Request = chain.request()
         val response = chain.proceed(request)
-        Log.d(TAG, "intercept: ${request.url}")
         return response
     }
 }

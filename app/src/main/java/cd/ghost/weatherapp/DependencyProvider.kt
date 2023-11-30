@@ -75,7 +75,8 @@ object DependencyProvider {
             weatherApi = getWeatherApi,
             locationTracker = getLocationTracker,
             ioDispatcher = Dispatchers.IO,
-            weatherDao = getWeatherDao
+            weatherDao = getWeatherDao,
+            appId = BuildConfig.API_KEY
         )
     }
 
@@ -83,7 +84,6 @@ object DependencyProvider {
         application = app
     }
 
-    const val API_KEY = "2a2f8516ac91f67d50c4343aa85514e6"
     private const val DB_NAME = "weather-app-db"
 
 }

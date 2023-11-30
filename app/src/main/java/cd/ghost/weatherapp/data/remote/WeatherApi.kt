@@ -12,7 +12,7 @@ interface WeatherApi {
         @Query("lon") lon: Double,
         @Query("cnt") cnt: Int = 16,
         @Query("units") units: String = "metric",
-        @Query("appid") appid: String = DependencyProvider.API_KEY
+        @Query("appid") appid: String
     ): ForecastResponse
 
 }

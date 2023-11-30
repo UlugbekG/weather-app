@@ -1,6 +1,5 @@
 package cd.ghost.weatherapp.data
 
-import android.util.Log
 import cd.ghost.weatherapp.core.Container
 import cd.ghost.weatherapp.core.EmptyWeatherInfoException
 import cd.ghost.weatherapp.core.EnableGPSException
@@ -25,6 +24,7 @@ class RepositoryImpl(
     private val locationTracker: LocationTracker,
     private val ioDispatcher: CoroutineDispatcher,
     private val weatherDao: WeatherDao,
+    private val appId: String,
 ) : Repository {
 
     /**
@@ -40,6 +40,7 @@ class RepositoryImpl(
             val forecast = weatherApi.forecast(
                 lat = currentLocation.latitude,
                 lon = currentLocation.longitude,
+                appid = appId
             )
 
             // map data into weatherData to database object.

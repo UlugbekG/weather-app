@@ -9,5 +9,4 @@ class App : Application() {
         DependencyProvider.init(this)
     }
 
-
 }

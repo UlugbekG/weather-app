@@ -23,10 +23,8 @@ class DefaultLocationTracker(
     private val application: Application,
 ) : LocationTracker {
 
-    private val TAG = "DefaultLocationTracker"
     override suspend fun getCurrentLocation(): Location? {
 
-        Log.d(TAG, "getCurrentLocation: ${isNetworkAvailable()}")
 
         val locationManager =
             application.getSystemService(Context.LOCATION_SERVICE) as LocationManager

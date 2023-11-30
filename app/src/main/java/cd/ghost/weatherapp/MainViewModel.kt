@@ -25,14 +25,11 @@ class MainViewModel(
 
     private var job: Job? = null
 
-    private val TAG = "MainViewModel"
-
     fun fetchData() {
         job?.cancel()
         job = viewModelScope.launch {
             repository.getWeatherData()
                 .catch {
-                    Log.d(TAG, "fetchData: Error")
                     _state.value = _state.value.copy(
                         errorData = catchExceptions(it),
                     )
@@ -40,7 +37,6 @@ class MainViewModel(
                 .collect { container ->
                     when (container) {
                         is Container.Success -> {
-                            Log.d(TAG, "fetchData:Success ${container.value}")
                             _state.value = _state.value.copy(
                                 weatherInfo = container.value,
                                 pending = false,
@@ -49,7 +45,6 @@ class MainViewModel(
                         }
 
                         is Container.Pending -> {
-                            Log.d(TAG, "fetchData: Pending")
                             _state.value = _state.value.copy(
                                 pending = true,
                                 errorData = null,
@@ -57,7 +52,6 @@ class MainViewModel(
                         }
 
                         is Container.Error -> {
-                            Log.d(TAG, "fetchData: Error ${container.exception}")
                             _state.value = _state.value.copy(
                                 pending = false,
                                 errorData = catchExceptions(container.exception),

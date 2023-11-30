@@ -21,19 +21,22 @@ android {
         }
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     buildTypes {
+        debug {
+            buildConfigField("String", "API_KEY", "\"2a2f8516ac91f67d50c4343aa85514e6\"")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "API_KEY", "\"2a2f8516ac91f67d50c4343aa85514e6\"")
         }
-    }
-    externalNativeBuild {
-//        ndkBuild {
-//            path("src/main/jni/Android.mk")
-//        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
