@@ -19,6 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object DependencyProvider {
+    // git account change
 
     private lateinit var application: Application
 
